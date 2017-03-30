@@ -1,0 +1,59 @@
+{
+  "name": "paper-mill",
+  "version": "1.0.0",
+  "description": "a cli tool to production papers",
+  "main": "index.js",
+  "bin": {
+    "papers": "./src/cli.js"
+  },
+  "scripts": {
+    "fix": "eslint --fix ./src",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "precommit": "npm run lint",
+    "commitmsg": "validate-commit-msg",
+    "changelog": "git changelog"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jasonChen1982/paper-mill.git"
+  },
+  "keywords": [
+    "create",
+    "md",
+    "file"
+  ],
+  "author": {
+    "name": "jason Chen",
+    "email": "jasonchen1882@gmail.com",
+    "url": "http://jason82.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jasonChen1982/paper-mill/issues"
+  },
+  "devDependencies": {
+    "eslint": "^3.8.1",
+    "eslint-config-google": "^0.7.1",
+    "husky": "^0.13.2",
+    "validate-commit-msg": "^2.11.1"
+  },
+  "homepage": "https://github.com/jasonChen1982/paper-mill#readme",
+  "config": {
+    "validate-commit-msg": {
+      "types": [
+        "feat",
+        "fix",
+        "docs",
+        "style",
+        "refactor",
+        "perf",
+        "test",
+        "chore",
+        "release",
+        "build",
+        "revert",
+        "deps"
+      ]
+    }
+  }
+}
