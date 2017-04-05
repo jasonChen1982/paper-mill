@@ -1,6 +1,6 @@
 {
   "name": "paper-mill",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "a cli tool to production papers",
   "main": "index.js",
   "bin": {
