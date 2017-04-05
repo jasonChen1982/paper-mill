@@ -11,6 +11,3 @@ indent_size = 2
 
 [*.md]
 trim_trailing_whitespace = false
-
-[{package.json,bower.json,.travis.yml}]
-indent_size = 2

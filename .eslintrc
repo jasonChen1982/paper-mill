@@ -1,22 +1,23 @@
 {
-    "extends": ["eslint:recommended", "google"],
-    "env": {
-        "browser": true,
-        "es6": true
-    },
-    "globals": {
-        "JC": true
-    },
-    "parserOptions": {
-        "ecmaVersion": 6,
-        "sourceType": "module"
-    },
-    "rules": {
-        "indent": ["error", 2],
-        "linebreak-style": ["error", "unix"],
-        "quotes": ["error", "single"],
-        "semi": ["error", "always"],
-        "no-cond-assign": ["error", "always"],
-        "no-console": "off"
+  "extends": ["eslint:recommended", "google"],
+  "env": {
+    "node": true,
+    "es6": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "ecmaFeatures": {
+      "spread": true,
+      "rest": true,
+      "experimentalObjectRestSpread": true,
+      "restParams": true
     }
+  },
+  "rules": {
+    "arrow-parens": 0,
+    "no-console": 0,
+    "require-jsdoc": 0,
+    "key-spacing": 0,
+    "max-len": 0
+  }
 }
