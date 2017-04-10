@@ -7,7 +7,7 @@
 安装
 
 ```sh
-npm i -g -D paper-mill
+npm i -g paper-mill
 ```
 
 生成文章
