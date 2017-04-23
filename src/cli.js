@@ -1,13 +1,17 @@
 #!/usr/bin/env node
+'use strict';
 
-// const fs = require('fs');
-// const path = require('path');
-// const chalk = require('chalk');
-// const fullname = require('fullname');
-// const inquirer = require('inquirer');
-// const moment = require('moment');
-// const ejs = require('ejs');
-const util = require('./util');
-// const cwd = process.cwd();
+const pkg = require('../package.json');
+const yargs = require('yargs');
+const util = require('./lib/util');
 
 util.updateCheck();
+
+yargs
+.commandDir('cmds')
+.demandCommand()
+.version(() => pkg.version)
+.help('h')
+.alias('h', 'help')
+.wrap(80)
+.argv;
