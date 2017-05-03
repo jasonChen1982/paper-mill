@@ -5,8 +5,9 @@ const fs = require('fs');
 const path = require('path');
 const pkg = require(cwd + '/package.json');
 
-const readmePath = require.resolve('../template/_README.md');
-const md = fs.readFileSync(readmePath, 'utf8').split('\n');
+const tplPath = require.resolve('../template/_README.md');
+const targetPath = require.resolve(cwd + '/README.md');
+const md = fs.readFileSync(tplPath, 'utf8').split('\n');
 
 
 function groupingByYear(samples, {y, d, p}) {
@@ -46,7 +47,7 @@ function warpPaper(paper, time, p) {
     result.paper = paper;
     result.title = paper.replace(/(\d{4})-\d{1,2}-\d{1,2}-|\.md/g, '');
     result.time = time;
-    result.url = encodeURI(p + paper);
+    result.url = encodeURI(p + '/blob/master/papers/' + paper);
     mark = result.finished ? 'x' : ' ';
     result.item = `- [${mark}] [${result.title}](${result.url})`;
     return result;
@@ -79,7 +80,7 @@ function putMD(papers, {f}) {
         result.push('');
     }
 
-    fs.writeFileSync(readmePath, result.join('\n'));
+    fs.writeFileSync(targetPath, result.join('\n'));
 }
 
 function sortFn(arr, order) {

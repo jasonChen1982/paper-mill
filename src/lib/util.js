@@ -1,7 +1,7 @@
 
 const chalk = require('chalk');
 const updateNotifier = require('update-notifier');
-const pkg = require('../package.json');
+const pkg = require('../../package.json');
 
 exports.updateCheck = function() {
   const notifier = updateNotifier({pkg});
