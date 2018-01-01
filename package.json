@@ -9,10 +9,10 @@
   "scripts": {
     "lint": "eslint ./src",
     "fix": "eslint --fix ./src",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "precommit": "npm run lint",
-    "commitmsg": "validate-commit-msg",
-    "changelog": "git changelog"
+    "prever": "npm run lint && git add -A && git commit -m 'release: release a new version'",
+    "ver": "standard-version -m 'chore(release): v%s'",
+    "postver": "git push --follow-tags origin master && npm publish",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -36,6 +36,7 @@
     "eslint": "^3.8.1",
     "eslint-config-google": "^0.7.1",
     "husky": "^0.13.2",
+    "standard-version": "^4.2.0",
     "validate-commit-msg": "^2.11.1"
   },
   "homepage": "https://github.com/jasonChen1982/paper-mill#readme",

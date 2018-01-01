@@ -3,10 +3,10 @@
 const cwd = process.cwd();
 const fs = require('fs');
 const path = require('path');
-const pkg = require(cwd + '/package.json');
+const util = require('../../../lib/util');
 
 const tplPath = require.resolve('../template/_README.md');
-const targetPath = require.resolve(cwd + '/README.md');
+const targetPath = path.resolve(cwd + '/README.md');
 const md = fs.readFileSync(tplPath, 'utf8').split('\n');
 
 
@@ -96,6 +96,7 @@ function sortFn(arr, order) {
 }
 
 exports.getPrefix = function() {
+  const pkg = util.getPkg();
   return pkg.homepage.replace(/#\w+/, '') || '';
 };
 exports.putPapers = function(samples, options) {
